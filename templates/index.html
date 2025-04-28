@@ -12,19 +12,39 @@
   <div id="app">
     <h1 id='title'>Unit Converter</h1>
 
-    <ul class="tab">
-      <li class="tab-item">
-        <a class="tab-link" href="#length-form">Length</a>
-      </li>
-      <li class="tab-item">
-        <a class="tab-link" href="#weight-form">Weight</a>
-      </li>
-      <li class="tab-item">
-        <a class="tab-link" href="#temperature-form">Temperature</a>
-      </li>
-    </ul>
+    <div class="tab">
+      <button type="button" class="tab-link active" onClick="openConverter(event, 'length-converter')">Length</button>
+      <button type="button" class="tab-link" onClick="openConverter(event, 'weight-converter')">Weight</button>
+      <button class="tab-link" onClick="openConverter(event, 'temperature-converter')">Temperature</button>
+    </div>
 
+    <section id="length-converter" class="tab-content">
+      <form id="length-form">
+        <label for="length-input">Enter the length to convert</label>
+        <input type="number" id="length-input" />
+
+        <label for="from-unit-input">Unit to Convert From</label>
+        <input type="number" id="from-unit-input" />
+
+        <label for="to-unit-input">Unit to Convert To</label>
+        <input type="number" id="to-unit-input" />
+
+        <button type="submit">Convert</button>
+      </form>
+    </section>
+    <section id="weight-converter" class="tab-content">
+      <form id="weight-form">
+
+      </form>
+    </section>
+    <section id="temperature-converter" class="tab-content">
+      <form id="temperature-form">
+
+      </form>
+    </section>
   </div>
+
+  <script src="/static/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+#app {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 1em;
+
+  font-weight: bold;
+
+  font-family: "Comic Neue", sans-serif;
+
+  width: 320px;
+  height: 450px;
+  padding: 15px;
+
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+  #title {
+    font-size: xx-large;
+  }
+
+  .tab {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 70px);
+    position: relative;
+    left: -3em;
+    top: -2em;
+
+    list-style: none;
+    gap: 10px;
+
+    .tab-link {
+      background-color: inherit;
+      float: left;
+      margin-left: 40px;
+      margin-top: 10px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: large;
+    }
+
+    .tab-link:active {
+      background-color: #ccc;
+    }
+  }
+
+  section {
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      margin: 0 auto;
+      margin-left: 10px;
+      margin-top: -1.5em;
+
+      label {
+        margin-bottom: .5em;
+        font-size: large;
+      }
+
+      input {
+        padding: 5px;
+        width: 80%;
+        margin-bottom: .5em;
+        border: 2px solid black;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 10px;
+        margin-top: .5em;
+        width: 8.5em;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size: medium;
+        font-family: "Comic Neue", sans-serif;
+        font-weight: bold;
+        transition: background .3s ease-in-out;
+      }
+
+      button:hover {
+        background: black;
+        color: white;
+      }
+    }
+  }
+}
