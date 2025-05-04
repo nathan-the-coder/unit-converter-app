@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import LengthConverter from "./LengthConverter";
-import WeightConverter from "./WeightConverter";
-import TemperatureConverter from "./TemperatureConverter";
+import React from "react";
 
-export default function Navbar() {
-  const [converter, setConverter] = useState<string>("length");
+interface NavbarProps {
+  converter: string;
+  onConverterChange: React.Dispatch<React.SetStateAction<string>>,
+}
+export default function Navbar({ converter, onConverterChange}: NavbarProps) {
 
   const tabs = [
     { label: "Length", value: "length" },
@@ -21,7 +21,7 @@ export default function Navbar() {
             <button
               role="tab"
               aria-selected={converter === tab.value}
-              onClick={() => setConverter(tab.value)}
+              onClick={() => onConverterChange(tab.value)}
               className={`inline-block p-4 rounded-t-lg border-b-2 ${
                 converter === tab.value
                   ? "text-blue-600 border-blue-600"
@@ -34,11 +34,6 @@ export default function Navbar() {
         ))}
       </ul>
 
-      <section className="p-2" role="tabpanel">
-        {converter === "length" && <LengthConverter />}
-        {converter === "weight" && <WeightConverter />}
-        {converter === "temperature" && <TemperatureConverter />}
-      </section>
     </nav>
   );
 }
