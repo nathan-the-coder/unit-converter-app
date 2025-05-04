@@ -1,54 +1,106 @@
-# React + TypeScript + Vite
+# Unit Converter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web application designed to convert between different units of measurement. This project uses a modern tech stack to provide a seamless user experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
+- Convert between a variety of measurement units (e.g., length, weight, volume, etc.).
+- Easy-to-use interface for quick conversions.
+- Built with scalability and performance in mind.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## Tech Stack
+The project uses the following technologies:
+- **Frontend**:
+  - React
+  - TypeScript
+  - Vite
+  - TailwindCSS
+- **Backend**:
+  - Node.js
+  - Express.js
+- **Package Management**:
+  - pnpm
+- **Other Tools**:
+  - ESLint for linting
+  - Prettier for code formatting
+
+---
+
+## Getting Started
+
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>= 18)
+- pnpm (>= 7)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/nathan-the-coder/unit-converter-app.git
+   cd unit-converter-app
+   ```
+2. Install dependencies:
+Install both the frontend and backend dependencies on each individual  folders
+  ```sh
+  # cd unit-converter-frontend - frontend
+  # cd unit-converter-backend - backend
+  pnpm install
+  ```
+
+### Runnning the Application
+To run the application locally:
+
+1. Start the frontend:
+```sh
+cd unit-converter-frontend
+pnpm run dev
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Start the backend:
+```sh
+cd unit-converter-backend
+pnpm run start
 ```
+The app will be accessible at http://localhost:3000.
+
+---
+## Usage
+
+1. Navigate to the app in your browser.
+2. Select a measurement type (e.g., length, weight, volume).
+3. Enter the value and choose the units to convert between.
+4. Get instant results!
+
+## Project Structure
+```
+unit-converter-app/
+├── unit-converter-frontend/  # Frontend source code
+├── unit-converter-backend/   # Backend source code
+├── .github/                  # GitHub workflows and configurations
+├── README.md                 # Project documentation
+├── LICENSE                   # Project License
+└── package.json              # Dependencies and scripts
+```
+---
+## Contributing
+We welcome contributions! To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature/bugfix.
+3. Commit your changes and create a pull request.
+---
+## License
+This project is licensed under the [MIT License](./LICENSE).
