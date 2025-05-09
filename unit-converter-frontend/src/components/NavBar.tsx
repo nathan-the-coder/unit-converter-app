@@ -2,9 +2,9 @@ import React from "react";
 
 interface NavbarProps {
   converter: string;
-  onConverterChange: Dispatch<SetStateAction<string>>,
+  onConverterChange: React.Dispatch<React.SetStateAction<string>>,
 }
-export default function Navbar({ converter, onConverterChange}: NavbarProps) {
+export default function Navbar({ converter, onConverterChange }: NavbarProps) {
 
   const tabs = [
     { label: "Length", value: "length" },
@@ -22,11 +22,10 @@ export default function Navbar({ converter, onConverterChange}: NavbarProps) {
               role="tab"
               aria-selected={converter === tab.value}
               onClick={() => onConverterChange(tab.value)}
-              className={`inline-block p-4 rounded-t-lg border-b-2 ${
-                converter === tab.value
-                  ? "text-blue-600 border-blue-600"
-                  : "text-gray-800 hover:text-blue-600 border-transparent"
-              }`}
+              className={`inline-block md:p-4 p-2 rounded-t-lg border-b-2 ${converter === tab.value
+                ? "text-blue-600 border-blue-600"
+                : "text-gray-800 hover:text-blue-600 border-transparent"
+                }`}
             >
               {tab.label}
             </button>
