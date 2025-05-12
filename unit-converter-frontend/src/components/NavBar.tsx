@@ -2,7 +2,7 @@ import React from "react";
 
 interface NavbarProps {
   converter: string;
-  onConverterChange: React.Dispatch<React.SetStateAction<string>>,
+  onConverterChange: Dispatch<SetStateAction<string>>,
 }
 export default function Navbar({ converter, onConverterChange}: NavbarProps) {
 

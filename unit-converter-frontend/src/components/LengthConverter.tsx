@@ -1,23 +1,17 @@
-import React, { FormEvent } from "react";
+import { useState, FormEvent } from "react";
+import { Data } from "../types";
 import clsx from "clsx";
 import axios from "axios";
 
-interface Data {
-    result: number;
-    from_unit: string;
-    to_unit: string;
-    original_value: number;
-}
-
 export default function LengthConverter() {
-  const [length, setLength] = React.useState(0);
-  const [fromUnit, setFromUnit] = React.useState("");
-  const [toUnit, setToUnit] = React.useState("");
-  const [lengthError, setLengthError] = React.useState('');
-  const [fromUnitError, setFromUnitError] = React.useState('');
-  const [toUnitError, setToUnitError] = React.useState('');
+  const [length, setLength] = useState(0);
+  const [fromUnit, setFromUnit] = useState("");
+  const [toUnit, setToUnit] = useState("");
+  const [lengthError, setLengthError] = useState('');
+  const [fromUnitError, setFromUnitError] = useState('');
+  const [toUnitError, setToUnitError] = useState('');
 
-  const [convData, setConvData] = React.useState<Data | null>(null);
+  const [convData, setConvData] = useState<Data | null>(null);
 
 
   const handleSubmitForm = (e: FormEvent) => {
@@ -55,7 +49,6 @@ export default function LengthConverter() {
       })
       .then(response => {
         const data: Data =response.data;
-        console.log(data);
         setConvData(data);
       })
       .catch(error => {
