@@ -11,8 +11,8 @@ interface UnitInputProps {
 
 export default function UnitInput({ label, name, value, error, onChange }: UnitInputProps) {
     return (
-        <div className="flex flex-col mb-4">
-            <label htmlFor={name} className="text-gray-700 font-semibold mb-2">{label}</label>
+        <div className="flex flex-col mb-2 text-left">
+            <label className="block font-bold mb-1" htmlFor={name}>{label}</label>
             <input
                 type="text"
                 id={name}
@@ -20,8 +20,11 @@ export default function UnitInput({ label, name, value, error, onChange }: UnitI
                 value={value}
                 onChange={onChange}
                 className={clsx(
-                    "border rounded px-3 py-2",
-                    error ? "border-red-500" : "border-gray-300"
+                    'p-1 rounded border-2 text-center focus:outline-none focus:ring-0 focus:border-blue-600',
+                    {
+                        'border-red-500': error,
+                        'border-gray-500': !error,
+                    }
                 )}
             />
             {error && <span className="text-red-500 text-sm mt-1">{error}</span>}

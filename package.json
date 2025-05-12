@@ -1,0 +1,12 @@
+{
+  "name": "unit-converter-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently -k -n frontend,backend -c cyan,green \"pnpm --filter unit-converter-app dev\" \"pnpm --filter unit-converter-backend start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+

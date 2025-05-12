@@ -8,7 +8,7 @@ import WeightConverter from './components/WeightConverter';
 function App() {
   const [converter, setConverter] = useState("length");
   return (
-    <main className="flex flex-col justify-center items-center mt-10 mx-auto border-2 rounded-xl font-sans w-2/5">
+    <main className="flex flex-col justify-center items-center mt-5 mx-auto border-2 rounded-xl font-sans w-full sm:w-1/2 md:w-2/3 lg:w-2/5 xl:w-2/6">
       <Navbar converter={converter} onConverterChange={setConverter} />
 
       <section className="relative -top-4 -left-7 mb-4" role="tabpanel">

@@ -1,0 +1,5 @@
+packages:
+  - unit-converter-backend
+  - unit-converter-frontend
+onlyBuiltDependencies:
+  - esbuild
